@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    includeme.rst
+   somemore.rst
 
 
 Indices and tables
