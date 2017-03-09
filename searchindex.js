@@ -1,0 +1,1 @@
+Search.setIndex({envversion:47,filenames:["includeme","index"],objects:{},objnames:{},objtypes:{},terms:{content:1,excit:0,index:1,modul:1,page:1,search:1,time:0},titles:["Testing to publish sphinx on github","Welcome to sphinxdoc-test&#8217;s documentation!"],titleterms:{document:1,github:0,indic:1,publish:0,sphinx:0,sphinxdoc:1,tabl:1,test:[0,1],welcom:1}})
