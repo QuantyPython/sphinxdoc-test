@@ -1,0 +1,2264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Part 0 &#8212; sphinxdoc-test 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Noe mer" href="somemore.html" /> 
+  </head>
+  <body role="document">
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">sphinxdoc-test 0.1 documentation</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="somemore.html" title="Noe mer"
+             accesskey="P">previous</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 7ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+</style>
+<div class="section" id="Part-0">
+<h1>Part 0<a class="headerlink" href="#Part-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Python">
+<h2>Python<a class="headerlink" href="#Python" title="Permalink to this headline">¶</a></h2>
+<p>In case you are wondering, we will be using Python 2.7. Python 3.3 is
+very similar, but we won&#8217;t worry about the differences in this session.</p>
+</div>
+<div class="section" id="iPython-Notebook">
+<h2>iPython Notebook<a class="headerlink" href="#iPython-Notebook" title="Permalink to this headline">¶</a></h2>
+<p>For the first hour we will be working with Python in your browser using
+iPython Notebook. Here is an example block of code:</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>from tutor import check
+print(&#39;Hello, World!&#39;)
+# This is a comment, it isn&#39;t run as code, but often they are helpful
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ImportError</span>                            Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-1-1eeac6a4185c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">from</span> tutor <span class="ansi-green-intense-fg ansi-bold">import</span> check
+<span class="ansi-green-fg">      2</span> print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Hello, World!&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">      3</span> <span class="ansi-red-intense-fg ansi-bold"># This is a comment, it isn&#39;t run as code, but often they are helpful</span>
+
+<span class="ansi-red-intense-fg ansi-bold">ImportError</span>: No module named &#39;tutor&#39;
+</pre></div></div>
+</div>
+<p>To run a block of code like the one above, click on it to select it and
+then you can either click the run button in the menu above:</p>
+<button id="run_b" title="Run Cell" class="ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-left" role="button" aria-disabled="false"><p>Run Cell</p>
+</button><p>or type shift-enter. The output of the block is shown below the block.</p>
+<p>All of the code blocks on this page are interactive. Please make sure
+you run them all at least once. Feel free the change the code and see
+what the affect is.</p>
+</div>
+</div>
+<div class="section" id="Part-1">
+<h1>Part 1<a class="headerlink" href="#Part-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Arithmetic">
+<h2>Arithmetic<a class="headerlink" href="#Arithmetic" title="Permalink to this headline">¶</a></h2>
+<p>Like every programming language, Python is a good calculator. Run the
+block of code below to make sure the answer is right!</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>1 + 1
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[2]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>2
+</pre></div>
+</div>
+</div>
+<p>Hopefully it worked.</p>
+<p>Now lets say you won the lottery. You are about to collect your
+millions, but first you have to answer this skill testing question:</p>
+<p>Fortuntely Python can help. The order of operations you learned in
+school applies, BEDMAS (brackets, exponents, division, multiplication,
+addition, subtraction)</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>8 + 6*2*3 - (15 - 13)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[3]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>42
+</pre></div>
+</div>
+</div>
+<p>Numbers are valid Python code as are the common operators, +, /, * and
+-. You can write different types of numbers including integers, real
+numbers (floating point) and negative integers.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>42 + 3.149 + -1
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[4]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>44.149
+</pre></div>
+</div>
+</div>
+<p>Since 42 is literally 42, we call these numbers <em>literals</em>. You are
+literally writing number in your Python code.</p>
+</div>
+<div class="section" id="Check-Please">
+<h2>Check Please<a class="headerlink" href="#Check-Please" title="Permalink to this headline">¶</a></h2>
+<p>So you just had a big meal to celebrate your winnings, and now you need
+to calculate the tip.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>meal = 200.00
+# as a decimal, 10% would be 0.1
+tip_percent = 0.10
+meal * tip_percent
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[5]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>20.0
+</pre></div>
+</div>
+</div>
+<p>If you want to make it more user friendly you could do the following.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>meal = 200.00
+# as integer, 10% would be 10
+tip_percent = 10
+meal * tip_percent / 100
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[6]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>20.0
+</pre></div>
+</div>
+</div>
+<p>Because of BEDMAS we don&#8217;t need brackets, but meal * (tip_percent /
+100) would work too.</p>
+</div>
+<div class="section" id="Variables">
+<h2>Variables<a class="headerlink" href="#Variables" title="Permalink to this headline">¶</a></h2>
+<p>meal and tip_percent aren&#8217;t literal numbers, they are variables.</p>
+<p>In Python variables are like buckets (dump trucks?). You can put
+anything you want in them. Just give them a name and you can use them in
+place of the literal value.</p>
+<p>Above meal was 200.00 but we could also set meal to the text &#8216;Hello,
+World&#8217;</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>meal = 200.00
+print(meal)
+meal = &quot;Hello, World!&quot;
+print(meal)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+200.0
+Hello, World!
+</pre></div></div>
+</div>
+<p>The value a variable has only depends on what it was last assigned.</p>
+<p>It is like a spreadsheet except you choose the names for the cells
+yourself.</p>
+</div>
+<div class="section" id="Exceptional-Python">
+<h2>Exceptional Python<a class="headerlink" href="#Exceptional-Python" title="Permalink to this headline">¶</a></h2>
+<p>Python only understands certain code. When you write something Python
+doesn&#8217;t understand it throws an exception and tries to explain what went
+wrong, but it can only speak in a broken Pythonesque english. Let&#8217;s see
+some examples by running these code blocks</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>gibberish
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-8-9bdd8ea4da78&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>gibberish
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;gibberish&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>*adsflf_
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-9-e23e056f3c48&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">1</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    *adsflf_</span>
+<span class="ansi-white-intense-fg ansi-bold">            ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> can&#39;t use starred expression here
+
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>print(&#39;Hello&#39;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-10-49c0f052bb79&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">1</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    print(&#39;Hello&#39;</span>
+<span class="ansi-white-intense-fg ansi-bold">                 ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> unexpected EOF while parsing
+
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>1v34
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-11-fe371f1ddd4f&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">1</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    1v34</span>
+<span class="ansi-white-intense-fg ansi-bold">       ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
+
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>2000 / 0
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ZeroDivisionError</span>                      Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-12-d14d67f6c4a6&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-cyan-intense-fg ansi-bold">2000</span> <span class="ansi-yellow-intense-fg ansi-bold">/</span> <span class="ansi-cyan-intense-fg ansi-bold">0</span>
+
+<span class="ansi-red-intense-fg ansi-bold">ZeroDivisionError</span>: division by zero
+</pre></div></div>
+</div>
+<p>Python tries to tell you where it stopped understanding, but in the
+above examples, each program is only 1 line long.</p>
+<p>It also tries to show you where on the line the problem happened with
+caret (&#8220;^&#8221;).</p>
+<p>Finally it tells you the type of thing that went wrong, (NameError,
+SyntaxError, ZeroDivisionError) and a bit more information like &#8220;name
+&#8216;gibberish&#8217; is not defined&#8221; or &#8220;unexpected EOF while parsing&#8221;.</p>
+<p>Unfortunately you might not find &#8220;unexpected EOF while parsing&#8221; too
+helpful. EOF stands for End of File, but what file? What is parsing?
+Python does it&#8217;s best, but it does take a bit of time to develop a knack
+for what these messages mean. If you run into an error you don&#8217;t
+understand please ask a tutor.</p>
+</div>
+<div class="section" id="Exercises">
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
+<p>Try to fix two three blocks of code so that they run successfully</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>print(&#39;Hello, World!)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-13-4ba9e9f36c27&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">1</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    print(&#39;Hello, World!)</span>
+<span class="ansi-white-intense-fg ansi-bold">                         ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> EOL while scanning string literal
+
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>aswer = 3 * 8
+print(answer)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-14-e62d425afbdd&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> aswer <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-cyan-intense-fg ansi-bold">3</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span> <span class="ansi-cyan-intense-fg ansi-bold">8</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span>answer<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;answer&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Part-2">
+<h1>Part 2<a class="headerlink" href="#Part-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="The-Written-Word">
+<h2>The Written Word<a class="headerlink" href="#The-Written-Word" title="Permalink to this headline">¶</a></h2>
+<p>Numbers are great... but most of our day to day computing needs involves
+text, from emails to tweets to documents.</p>
+<p>We have already seen a text literal in Python, &#8220;Hello, World!&#8221;</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>&quot;Hello, World!&quot;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[15]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&#39;Hello, World!&#39;
+</pre></div>
+</div>
+</div>
+<p>Text literals are surrounded by quotes. Without the quotes Hello by
+itself would be viewed as a variable name.</p>
+<p>You can use either double quotes (&#8221;) or single quotes (&#8216;) for text
+literals.</p>
+<p>As we saw before we can also save text literals in variables.</p>
+</div>
+<div class="section" id="What's-a-String?">
+<h2>What&#8217;s a String?<a class="headerlink" href="#What's-a-String?" title="Permalink to this headline">¶</a></h2>
+<p>Programmers call text literals <em>strings</em> because we are weird like that.
+From now on we will only refer to strings, but we just mean pieces of
+text inside our code.</p>
+<p>Let&#8217;s use strings with variables!</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>your_name = &quot;Albert O&#39;Connor&quot;
+print(&quot;Hello, &quot;)
+print(your_name)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Hello,
+Albert O&#39;Connor
+</pre></div></div>
+</div>
+<p>Strings in Python are a bit more complicated because the operations on
+them aren&#8217;t just + and * (though those are valid operations).</p>
+<p>Strings have their own operations we can call on them to change them. We
+can use dir to get an idea of what they are.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>dir(&quot;Hello, World!&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[17]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>[&#39;__add__&#39;,
+ &#39;__class__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__getnewargs__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mod__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__rmod__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;capitalize&#39;,
+ &#39;casefold&#39;,
+ &#39;center&#39;,
+ &#39;count&#39;,
+ &#39;encode&#39;,
+ &#39;endswith&#39;,
+ &#39;expandtabs&#39;,
+ &#39;find&#39;,
+ &#39;format&#39;,
+ &#39;format_map&#39;,
+ &#39;index&#39;,
+ &#39;isalnum&#39;,
+ &#39;isalpha&#39;,
+ &#39;isdecimal&#39;,
+ &#39;isdigit&#39;,
+ &#39;isidentifier&#39;,
+ &#39;islower&#39;,
+ &#39;isnumeric&#39;,
+ &#39;isprintable&#39;,
+ &#39;isspace&#39;,
+ &#39;istitle&#39;,
+ &#39;isupper&#39;,
+ &#39;join&#39;,
+ &#39;ljust&#39;,
+ &#39;lower&#39;,
+ &#39;lstrip&#39;,
+ &#39;maketrans&#39;,
+ &#39;partition&#39;,
+ &#39;replace&#39;,
+ &#39;rfind&#39;,
+ &#39;rindex&#39;,
+ &#39;rjust&#39;,
+ &#39;rpartition&#39;,
+ &#39;rsplit&#39;,
+ &#39;rstrip&#39;,
+ &#39;split&#39;,
+ &#39;splitlines&#39;,
+ &#39;startswith&#39;,
+ &#39;strip&#39;,
+ &#39;swapcase&#39;,
+ &#39;title&#39;,
+ &#39;translate&#39;,
+ &#39;upper&#39;,
+ &#39;zfill&#39;]
+</pre></div>
+</div>
+</div>
+<p>That is a really long list. For now you can ignore the ones which start
+and end with underscores (&#8220;_&#8221;), but that still leaves a lot! Let&#8217;s
+start with upper and lower.</p>
+<p>Let&#8217;s say you are really happy to the world, and you want to make sure
+everyone knows it, you can use upper. &#8220;upper&#8221; is short for uppercase and
+you will see what it does by running the code block below.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>string = &quot;Hello, World&quot;
+string.upper()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[18]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&#39;HELLO, WORLD&#39;
+</pre></div>
+</div>
+</div>
+<p>Maybe you are feeling a bit sad and you want to be quiet, you can then
+use lower.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>string = &quot;Hello, World&quot;
+string.lower()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[19]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&#39;hello, world&#39;
+</pre></div>
+</div>
+</div>
+<p>We use the dot (&#8221;.&#8221;) operator to call these operations on the string.
+What lower and upper operate on comes before the dot and needs to be a
+string variable or literal.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>&quot;Hello, World&quot;.upper()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[20]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&#39;HELLO, WORLD&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Formating">
+<h2>Formating<a class="headerlink" href="#Formating" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you want to create a string out of a few other strings. Above
+we printed</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Hello</span><span class="p">,</span>
+<span class="n">Your</span> <span class="n">Name</span>
+</pre></div>
+</div>
+<p>by using two print statements, but it would be nice to output &#8220;Hello,
+Your Name!&#8221; instead. (Where Your Name is actually your name... oh
+variables)</p>
+<p>We can do this with the string operation called format. Format is
+different from lower and upper because it can take other arguments. An
+<em>agrument</em> is what coders call the value passed to an operation or
+function, it doesn&#8217;t mean we are fighting.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>your_name = &quot;Albert O&#39;Connor&quot;
+string = &quot;Hello, {0}!&quot;
+print(string.format(your_name))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Hello, Albert O&#39;Connor!
+</pre></div></div>
+</div>
+<p>We can also used literal strings:</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>print(&quot;Hello, {0}!&quot;.format(&quot;Albert O&#39;Connor&quot;))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Hello, Albert O&#39;Connor!
+</pre></div></div>
+</div>
+<p>{0} is kind of weird. {0} is where the first argument, &#8220;Albert
+O&#8217;Connor&#8221;, to format() is placed in the resulting text. {1} would mean
+use the second value if there was one. See below!</p>
+</div>
+<div class="section" id="Indexed-by-Zero">
+<h2>Indexed by Zero<a class="headerlink" href="#Indexed-by-Zero" title="Permalink to this headline">¶</a></h2>
+<p>For better or worse, (and practically it is better most of the time)
+everything in Python is index by 0. We will see this over and over again
+but for now if you call format like this:</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>&quot;{0} likes {1}&quot;.format(&quot;Albert O&#39;Connor&quot;, &#39;Python&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[23]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&quot;Albert O&#39;Connor likes Python&quot;
+</pre></div>
+</div>
+</div>
+<p>We would call &#8220;Albert O&#8217;Connor&#8221; the 0th string passed into format and
+&#8216;Python&#8217; the 1st. It is kind of weird, but roll with it. It will
+eventually make things eaiser.</p>
+</div>
+<div class="section" id="Line-Endings">
+<h2>Line Endings<a class="headerlink" href="#Line-Endings" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s say we wanted to represent the string in one string variable?</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">200</span> <span class="n">University</span> <span class="n">Ave</span><span class="o">.</span>
+<span class="n">Waterloo</span><span class="p">,</span> <span class="n">ON</span>
+</pre></div>
+</div>
+<p>A line ending is one example of something which is part of text on the
+screen that we need to somehow represent in a string. The key is the
+backslash (&#8220;&#8221;) character. &#8220;&#8221; and &#8220;&#8221; represents two kind of line endings.
+Try adding &#8220;&#8221; in the right place to make it appear like the text at the
+beginning of this section.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>print(&quot;200 University Ave. Waterloo, ON&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+200 University Ave. Waterloo, ON
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise">
+<h2>Exercise<a class="headerlink" href="#Exercise" title="Permalink to this headline">¶</a></h2>
+<p>Alice is sending a short email message to Bob. She wants to format the
+message on screen so she knows what she is sending. She is using the
+string called template below. Change the value of the template string to
+make it better. You can run the block to get further instructions.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span># Edit this string
+template =&quot;{0} {1} {2} {3}&quot;
+
+# Leave this alone please, it will help you as you go through the exercise
+check(&#39;p1&#39;, template.format(&quot;alice@domain.org&quot;, &quot;bob@domain.org&quot;, &quot;Alice&#39;s Subject&quot;, &quot;This is my one line message!&quot;))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-25-106c31420ddc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      3</span>
+<span class="ansi-green-fg">      4</span> <span class="ansi-red-intense-fg ansi-bold"># Leave this alone please, it will help you as you go through the exercise</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 5</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>check<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;p1&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> template<span class="ansi-yellow-intense-fg ansi-bold">.</span>format<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;alice@domain.org&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;bob@domain.org&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;Alice&#39;s Subject&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-blue-intense-fg ansi-bold">&#34;This is my one line message!&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;check&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Part-3">
+<h1>Part 3<a class="headerlink" href="#Part-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="If-Else">
+<h2>If Else<a class="headerlink" href="#If-Else" title="Permalink to this headline">¶</a></h2>
+<p>Has an application ever ask you a question? Maybe it asks you if you
+really want to quit because unsaved changed might lost, or if you want
+to leave a webpage. If you answer OK one thing happen, like your
+application closing, but if you answer No or Cancel something else
+happens. In all those cases there is a special piece of code that is
+being run somewhere, it is an <em>if</em> condition.</p>
+<p>Like all languages, Python allows us to conditionally run code.</p>
+<p>To have an if condition we need the idea of something being true and
+something being false. Remember, we call numbers &#8220;integers&#8221; and
+&#8220;floating point&#8221;, and text &#8220;strings&#8221;. We call true or false &#8220;boolean&#8221;
+values. True would represent OK where as false would represent No or
+Cancel in the example above.</p>
+<p>The literal values in Python for true and false are &#8220;True&#8221; and &#8220;False&#8221;</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>False is False
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[26]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>True
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>True is True
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[27]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>True
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>True is False
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[28]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>False
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>true is False
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-29-16525f6953e7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>true <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">False</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;true&#39; is not defined
+</pre></div></div>
+</div>
+<p>We can write expressions with operations too.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [30]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>1 &gt; 2
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[30]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>False
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>&quot;Cool&quot;.startswith(&quot;C&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[31]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>True
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>&quot;Cool&quot;.endswith(&quot;C&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[32]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>False
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>&quot;oo&quot; in &quot;Cool&quot;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[33]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>True
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [34]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>42 == 1 # note the double equals sign for equality
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[34]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>False
+</pre></div>
+</div>
+</div>
+<p>In order to write an &#8220;if&#8221; statement we need code that spans multiple
+lines</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condition is True&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condition is False&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Some things to notice. The if condition ends in a colon (&#8221;:&#8221;). In Python
+blocks of code are indicated with a colon (&#8221;:&#8221;) and are grouped by white
+space. Notice the else also ends with a colon (&#8221;:&#8221;), &#8220;else:&#8221;. Let&#8217;s try
+changing the condition and see what happens.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [35]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>condition = 1 &gt; 2
+if condition:
+    print(&quot;Condition is True&quot;)
+else:
+    print(&quot;Condition is False&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Condition is False
+</pre></div></div>
+</div>
+<p>About that white space, consider the following code:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condition is True&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condition is False&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condition is True or False, either way this is outputted&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since the last print statement isn&#8217;t indented it gets run after the if
+block or the else block.</p>
+<p>You can play with this. Try indenting the last print statement below and
+see what happens.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [36]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>condition = True
+if condition:
+    print(&quot;Condition is True&quot;)
+else:
+    print(&quot;Condition is False&quot;)
+print(&quot;Condition is True or False, either way this is outputted&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Condition is True
+Condition is True or False, either way this is outputted
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise">
+<h2>Exercise<a class="headerlink" href="#Exercise" title="Permalink to this headline">¶</a></h2>
+<p>You can also use &#8220;and&#8221; and &#8220;or&#8221; to combine conditions. Let&#8217;s look at
+and.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span> <span class="ow">is</span> <span class="kc">True</span>
+<span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span> <span class="ow">is</span> <span class="kc">False</span>
+<span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span> <span class="ow">is</span> <span class="kc">False</span>
+<span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span> <span class="ow">is</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>With &#8220;and&#8221; both conditions have to be True to be True.</p>
+<p>Below change the values of the three variables to make the entire &#8220;if
+condition&#8221; true.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [37]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span># Edit the values of these 3 variables
+boolean_literal = False
+number = 8
+string_literal = &quot;I like to count sheep before bed.&quot;
+
+# Leave this code the same please
+if number &gt; 10 and boolean_literal and &quot;cows&quot; in string_literal:
+    print(&quot;Success!&quot;)
+else:
+    print(&quot;Try again!&quot;)
+
+# This just provides some hints
+check(&quot;p3&quot;, (number, boolean_literal, string_literal))
+</pre></div>
+</div>
+</div>
+<div class="nboutput container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Try again!
+</pre></div></div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-37-5bbe6e775e73&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">     11</span>
+<span class="ansi-green-fg">     12</span> <span class="ansi-red-intense-fg ansi-bold"># This just provides some hints</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 13</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>check<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;p3&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">(</span>number<span class="ansi-yellow-intense-fg ansi-bold">,</span> boolean_literal<span class="ansi-yellow-intense-fg ansi-bold">,</span> string_literal<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;check&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Part-4">
+<h1>Part 4<a class="headerlink" href="#Part-4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Lists">
+<h2>Lists<a class="headerlink" href="#Lists" title="Permalink to this headline">¶</a></h2>
+<p>So far we have numbers, strings, and conditional if statements. Now for
+our first container — a list.</p>
+<p>A list in Python is just like a shopping list or a list of numbers. They
+have a defined order and you can add to it or remove from it.</p>
+<p>Let&#8217;s take a look at some simple lists.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [38]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span># The empty list
+[]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[38]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>[]
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [39]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>[&quot;Milk&quot;, &quot;Eggs&quot;, &quot;Bacon&quot;]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[39]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>[&#39;Milk&#39;, &#39;Eggs&#39;, &#39;Bacon&#39;]
+</pre></div>
+</div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [40]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>[1,2,3]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[40]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+<p>List literals are all about square brackets (&#8220;[ ]&#8221;) and commas (&#8221;,&#8221;).
+You can create a list of literals by wrapping them in square brackets
+and separating them with commas.</p>
+<p>You can even mix different types of things into the same list; numbers,
+strings, booleans.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [41]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>[True, 0, &quot;Awesome&quot;]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[41]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>[True, 0, &#39;Awesome&#39;]
+</pre></div>
+</div>
+</div>
+<p>We can put variables into a list and set a variable to a list.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [42]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>your_name = &quot;Albert O&#39;Connor&quot;
+awesome_people = [&quot;Eric Idle&quot;, your_name]
+print(awesome_people)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+[&#39;Eric Idle&#39;, &#34;Albert O&#39;Connor&#34;]
+</pre></div></div>
+</div>
+<p>Like strings lists have operations</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [43]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>dir([])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[43]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>[&#39;__add__&#39;,
+ &#39;__class__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__delitem__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__iadd__&#39;,
+ &#39;__imul__&#39;,
+ &#39;__init__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__mul__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__reversed__&#39;,
+ &#39;__rmul__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setitem__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;append&#39;,
+ &#39;clear&#39;,
+ &#39;copy&#39;,
+ &#39;count&#39;,
+ &#39;extend&#39;,
+ &#39;index&#39;,
+ &#39;insert&#39;,
+ &#39;pop&#39;,
+ &#39;remove&#39;,
+ &#39;reverse&#39;,
+ &#39;sort&#39;]
+</pre></div>
+</div>
+</div>
+<p>&#8220;append&#8221; is an interesting one. &#8220;append&#8221; lets you add an item to the end
+of a list.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [44]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>your_name = &quot;Albert O&#39;Connor&quot;
+awesome_people = [&quot;Eric Idle&quot;, your_name]
+awesome_people.append(&quot;John Cleese&quot;)
+print(awesome_people)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+[&#39;Eric Idle&#39;, &#34;Albert O&#39;Connor&#34;, &#39;John Cleese&#39;]
+</pre></div></div>
+</div>
+<p>We can use square brackets (&#8220;[]&#8221;) again with the variable of the list to
+access individual elements.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [45]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>awesome_people[0]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[45]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&#39;Eric Idle&#39;
+</pre></div>
+</div>
+</div>
+<p>There is that 0 indexing again. The first element of the list is given
+index value 0.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [46]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>print(&quot;These people are awesome: {0}, {1}, {2}&quot;.format(awesome_people[0], awesome_people[1], awesome_people[2]))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+These people are awesome: Eric Idle, Albert O&#39;Connor, John Cleese
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Loops">
+<h2>Loops<a class="headerlink" href="#Loops" title="Permalink to this headline">¶</a></h2>
+<p>Indexes are useful, but lists really shine when you start looping.</p>
+<p>Loops let you do something for each item in a list. They are kind of
+like if statements because they have an indented block.</p>
+<p>They look like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="c1"># Do any action per item in the list</span>
+</pre></div>
+</div>
+<p>&#8220;for&#8221; and &#8220;in&#8221; are required. &#8220;list&#8221; can be any variable or literal which
+is like a list. &#8220;item&#8221; is the name you want to give each item of the
+list in the indented block as you iterate through. We call each step
+where item has a new value an iteration.</p>
+<p>Let&#8217;s see it in action with our list</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [47]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>your_name = &quot;Albert O&#39;Connor&quot;
+awesome_people = [&quot;Eric Idle&quot;, your_name]
+awesome_people.append(&quot;John Cleese&quot;)
+
+for person in awesome_people:
+    print(person)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Eric Idle
+Albert O&#39;Connor
+John Cleese
+</pre></div></div>
+</div>
+<p>This is bascially the same as writing</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [48]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>person = awesome_people[0]
+print(person)
+person = awesome_people[1]
+print(person)
+person = awesome_people[2]
+print(person)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Eric Idle
+Albert O&#39;Connor
+John Cleese
+</pre></div></div>
+</div>
+<p>But that is a lot more code than:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">awesome_people</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Considering that our list of awesome people could be very long!</p>
+<p>You can use the built-in function &#8220;range&#8221; to create lists of numbers
+easily</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [49]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>range(0,10)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[49]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>range(0, 10)
+</pre></div>
+</div>
+</div>
+<p>And then we can use that with a loop to print a list of squares.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [50]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>for number in range(0,10):
+    print(&quot;{0} squared is {1}&quot;.format(number, number*number))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+0 squared is 0
+1 squared is 1
+2 squared is 4
+3 squared is 9
+4 squared is 16
+5 squared is 25
+6 squared is 36
+7 squared is 49
+8 squared is 64
+9 squared is 81
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise">
+<h2>Exercise<a class="headerlink" href="#Exercise" title="Permalink to this headline">¶</a></h2>
+<p>Create a list of numbers where every item in the list is the same as its
+index, i.e. number_list[4] is 4. The list should contain 5 items.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [51]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span># Edit the contents of this list
+number_list = []
+
+# Leave this line alone please
+check(&quot;p4&quot;, number_list)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-51-1991dc0f7f59&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      3</span>
+<span class="ansi-green-fg">      4</span> <span class="ansi-red-intense-fg ansi-bold"># Leave this line alone please</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 5</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>check<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;p4&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> number_list<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;check&#39; is not defined
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="Part-5">
+<h1>Part 5<a class="headerlink" href="#Part-5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#Dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>We have come a long way! Just one more section. Dictionaries are another
+container like lists, but instead of being index by a number like 0 or 1
+it is indexed by a key which can be almost anything. The name comes from
+being able to use it to represent a dictionary.</p>
+<p>List literals use square brackets (&#8220;[]&#8221;) but dictionaries use braces
+(&#8220;{}&#8221;). Use &#8220;shift-[&#8221; to type &#8220;{&#8221;.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;Python&quot;</span><span class="p">:</span> <span class="s2">&quot;An awesome programming language&quot;</span><span class="p">,</span>
+ <span class="s2">&quot;Monty Python&quot;</span><span class="p">:</span> <span class="s2">&quot;A british comedy troupe&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In a dictionary the key comes first followed by a colon (&#8221;:&#8221;) than the
+value then a comma (&#8221;,&#8221;) then another key and so on. This is one
+situation where a colon doesn&#8217;t start a block.</p>
+<p>Let&#8217;s see what running the literal dictionary looks like.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [52]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>{&quot;Python&quot;: &quot;An awesome programming language&quot;,
+ &quot;Monty Python&quot;: &quot;A british comedy troupe&quot;}
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[52]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>{&#39;Monty Python&#39;: &#39;A british comedy troupe&#39;,
+ &#39;Python&#39;: &#39;An awesome programming language&#39;}
+</pre></div>
+</div>
+</div>
+<p>We can assign a dictionary to a variable and we can index it by keys to
+get the values (definitions) out.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [53]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>our_dictionary = {
+   &quot;Python&quot;: &quot;An awesome programming language&quot;,
+   &quot;Monty Python&quot;: &quot;A british comedy troupe&quot;
+}
+our_dictionary[&quot;Python&quot;]
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[53]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>&#39;An awesome programming language&#39;
+</pre></div>
+</div>
+</div>
+<p>We can loop over the keys in a dictionary to list all of our
+definitions...</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [54]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>for key in our_dictionary:
+    print(&#39;The Key is &quot;{0}&quot; and the value is  &quot;{1}&quot;&#39;.format(key, our_dictionary[key]))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+The Key is &#34;Python&#34; and the value is  &#34;An awesome programming language&#34;
+The Key is &#34;Monty Python&#34; and the value is  &#34;A british comedy troupe&#34;
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Mail-Merge">
+<h2>Mail Merge<a class="headerlink" href="#Mail-Merge" title="Permalink to this headline">¶</a></h2>
+<p>Our project this weekend is to write a mail merge program. Given a
+template for the message and a list of dictionaries of information
+including email addresses, we can create several messages each
+personalized depending on the information we have.</p>
+<p>The data will start as a spreadsheet but it will end up in a dictionary.
+Each message will have its own dictionary. We can use the string
+formating you have learned about with a little twist to get Python to
+format the dictionaries as emails for us.</p>
+<p>We will look at the basics now, but don&#8217;t worry will be working on this
+today and tomorrow!</p>
+</div>
+<div class="section" id="Format-with-Dictionaries">
+<h2>Format with Dictionaries<a class="headerlink" href="#Format-with-Dictionaries" title="Permalink to this headline">¶</a></h2>
+<p>So far our formatting strings have looked like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello, </span><span class="si">{0}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Where &#8220;0&#8221; in &#8220;{0}&#8221; refers to the index of the arguments we pass into the
+format function. We can also put argument names inbetween the braces
+&#8220;{}&#8221;.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [55]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>print(&#39;Hello, {name}! Your favorite color is {favorite_color}.&#39;.format(name=&quot;Albert O&#39;Connor&quot;,
+                                                                       favorite_color=&#39;green&#39;))
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Hello, Albert O&#39;Connor! Your favorite color is green.
+</pre></div></div>
+</div>
+<p>This is handy if you ever need to reuse a value and you don&#8217;t want to
+list it twice.</p>
+<p>But we can do more, instead of passing keyword arguments into the format
+function like we did above, we can pass in a dictionary. Note the
+dictionaries keys have to be strings, but that is exactly what we will
+be doing.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [56]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>info = {&#39;name&#39;: &quot;Albert O&#39;Connor&quot;,
+        &#39;favorite color&#39;: &#39;green&#39;}
+print(&#39;Hello, {name}! Your favorite color is {favorite color}.&#39;.format(**info))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Hello, Albert O&#39;Connor! Your favorite color is green.
+</pre></div></div>
+</div>
+<p>The &#8220;**&#8221; before data is a bit of stranger Python syntax. It means
+instead of passing info as the first agrument, pass all the key value
+pairs inside the info dictionary as keyword arguments. Let&#8217;s look at a
+few varation on the syntax one at a time.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [57]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>data = {&#39;name&#39;: &quot;Albert O&#39;Connor&quot;,
+        &#39;favorite_color&#39;: &#39;green&#39;}
+print(&#39;{0}&#39;.format(data)) # This prints the dictionary as text
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+{&#39;favorite_color&#39;: &#39;green&#39;, &#39;name&#39;: &#34;Albert O&#39;Connor&#34;}
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [58]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>data = {&#39;name&#39;: &quot;Albert O&#39;Connor&quot;,
+        &#39;favorite_color&#39;: &#39;green&#39;}
+print(&#39;{0}&#39;.format(**data)) # This produces an error, there are no indexable arguments, just keyword
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">IndexError</span>                             Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-58-8d5b4cc80f62&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> data = {&#39;name&#39;: &#34;Albert O&#39;Connor&#34;,
+<span class="ansi-green-fg">      2</span>         &#39;favorite_color&#39;: &#39;green&#39;}
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;{0}&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>format<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">**</span>data<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-red-intense-fg ansi-bold"># This produces an error, there are no indexable arguments, just keyword</span>
+
+<span class="ansi-red-intense-fg ansi-bold">IndexError</span>: tuple index out of range
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [59]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>data = {&#39;name&#39;: &quot;Albert O&#39;Connor&quot;,
+        &#39;favorite_color&#39;: &#39;green&#39;}
+print(&#39;{0}&#39;.format(&#39;Eric!&#39;, **data)) # Eric is the 0th argument, all the keywords are ignored!
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Eric!
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [60]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>data = {&#39;name&#39;: &quot;Albert O&#39;Connor&quot;,
+        &#39;favorite_color&#39;: &#39;green&#39;}
+# data is passed as indexiable so there is no keyword arguments.
+print(&#39;Hello, {name}! Your favorite color is {favorite_color}.&#39;.format(data))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                               Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-60-44c40a6f3ede&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      2</span>         &#39;favorite_color&#39;: &#39;green&#39;}
+<span class="ansi-green-fg">      3</span> <span class="ansi-red-intense-fg ansi-bold"># data is passed as indexiable so there is no keyword arguments.</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 4</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Hello, {name}! Your favorite color is {favorite_color}.&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>format<span class="ansi-yellow-intense-fg ansi-bold">(</span>data<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;name&#39;
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [61]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>data = {&#39;name&#39;: &quot;Albert O&#39;Connor&quot;,
+        &#39;favorite_color&#39;: &#39;green&#39;}
+# There we go, name and favorite_color are passed as keywords.
+print(&#39;Hello, {name}! Your favorite color is {favorite_color}.&#39;.format(**data))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+Hello, Albert O&#39;Connor! Your favorite color is green.
+</pre></div></div>
+</div>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [62]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>data = {&#39;name&#39;: &quot;Albert O&#39;Connor&quot;,
+        &#39;favorite_color&#39;: &#39;green&#39;}
+# data is passed as keyword, but doesn&#39;t have the key &#39;pet_name&#39;.
+print(&#39;{pet_name}&#39;.format(**data))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>                               Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-62-251924ec9989&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      2</span>         &#39;favorite_color&#39;: &#39;green&#39;}
+<span class="ansi-green-fg">      3</span> <span class="ansi-red-intense-fg ansi-bold"># data is passed as keyword, but doesn&#39;t have the key &#39;pet_name&#39;.</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 4</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;{pet_name}&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>format<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">**</span>data<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">KeyError</span>: &#39;pet_name&#39;
+</pre></div></div>
+</div>
+<p>The excersises in this section will combine the above idea with lists
+and loops.</p>
+</div>
+<div class="section" id="Exercises">
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
+<p>First we need some data, in this case we want to create two
+dictionaries, each with a name and email key:</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [63]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span># Edit with the values you want.
+entry_1 = {&#39;name&#39;: &quot;&quot;,
+           &#39;email&#39;: &quot;&quot;}
+
+# Add the keys and values to this entry like above.
+entry_2 = {}
+
+print(entry_1)
+print(entry_2)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+{&#39;name&#39;: &#39;&#39;, &#39;email&#39;: &#39;&#39;}
+{}
+</pre></div></div>
+</div>
+<p>Once you two dictionaries, entry_1 and entry_2 with values for the
+keys &#8216;name&#8217; and &#8216;email&#8217;, let&#8217;s put them into a list.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [64]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>entries = [entry_1,]  # Edit this list to include both entries
+
+print(entries)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+[{&#39;name&#39;: &#39;&#39;, &#39;email&#39;: &#39;&#39;}]
+</pre></div></div>
+</div>
+<p>Now you can write your own message which uses both the &#8216;name&#8217; and
+&#8216;email&#8217; values. You can write anything you want. We are going to use
+another way to write Python strings, inside triple quote string you can
+just press enter for a newline, no &#8220;&#8221; required. Just write as you would
+normally in an editor.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [65]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span># Edit this message
+message = &quot;&quot;&quot;To: {email}
+
+Hey you,
+
+How is the weather?
+&quot;&quot;&quot;
+
+print message
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-65-0d2020954566&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">9</span>
+<span class="ansi-yellow-intense-fg ansi-bold">    print message</span>
+<span class="ansi-white-intense-fg ansi-bold">                ^</span>
+<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> Missing parentheses in call to &#39;print&#39;
+
+</pre></div></div>
+</div>
+<p>Make sure your message includes &#8220;{name}&#8221; somewhere so it is
+personalized.</p>
+<p>Final step, let&#8217;s use a for loop to combine everything! Change the for
+loop to format the message with each of the entries.</p>
+<div class="nbinput container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [66]:
+</pre></div>
+</div>
+<div class="input_area highlight-none"><div class="highlight"><pre>
+<span></span>for entry in entries:
+    print(message) # Add .format with the right arguments
+    print(&quot;-&quot;*40)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast container">
+<div class="prompt empty container">
+</div>
+<div class="output_area container">
+<div class="highlight"><pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-66-199723c11da7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> <span class="ansi-green-intense-fg ansi-bold">for</span> entry <span class="ansi-green-intense-fg ansi-bold">in</span> entries<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span>message<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-red-intense-fg ansi-bold"># Add .format with the right arguments</span>
+<span class="ansi-green-fg">      3</span>     print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;-&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">*</span><span class="ansi-cyan-intense-fg ansi-bold">40</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;message&#39; is not defined
+</pre></div></div>
+</div>
+<p>Ask a tutor to review your work and ask any question you have.</p>
+<p>Once you have your tutors ok you are done! Awesome job!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="includeme.html">Testing to publish sphinx on github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="somemore.html">Noe mer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Part 0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Python">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#iPython-Notebook">iPython Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Part-1">Part 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Arithmetic">Arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Check-Please">Check Please</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exceptional-Python">Exceptional Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Part-2">Part 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#The-Written-Word">The Written Word</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#What's-a-String?">What&#8217;s a String?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Formating">Formating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Indexed-by-Zero">Indexed by Zero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Line-Endings">Line Endings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Part-3">Part 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#If-Else">If Else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Part-4">Part 4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Lists">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Loops">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise">Exercise</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#Part-5">Part 5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Dictionaries">Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Mail-Merge">Mail Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Format-with-Dictionaries">Format with Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a></li>
+</ul>
+</li>
+</ul>
+
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+          </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="somemore.html" title="Noe mer"
+              >previous</a> |
+            <a href="genindex.html" title="General Index"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/Learn to Code with Python.ipynb.txt"
+                rel="nofollow">Show Source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, a1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

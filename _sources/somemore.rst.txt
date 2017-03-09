@@ -1,0 +1,20 @@
+Noe mer
+-------
+
+Her skal det stå mye rart.
+
+Helst skal vi kunne skrive matematikk slik som :math:`a^2 + b^2 = c^2`.
+
+Eventuelt også:
+
+.. math::
+
+   (a + b)^2 = a^2 + 2ab + b^2
+
+   (a - b)^2 = a^2 - 2ab + b^2
+   
+   \exp(i\pi) = -1
+   
+   \int_0^1 xdx  = \frac{1}{2}
+   
+Vi får se hvordan det går.
